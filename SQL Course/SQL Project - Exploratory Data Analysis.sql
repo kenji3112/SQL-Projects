@@ -17,6 +17,7 @@ ORDER BY funds_raised_millions DESC;
 SELECT YEAR([date]) as 'Year', SUM(total_laid_off) Total_Laid_Off
 FROM
 layoffs_staging
+WHERE YEAR([date]) IS NOT NULL    
 GROUP BY YEAR([date])
 ORDER BY 1 DESC;
 
